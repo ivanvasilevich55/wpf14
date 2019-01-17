@@ -7,12 +7,17 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" x:Key="brush">
+            <GradientStop Offset="0" Color="Red"/>
+            <GradientStop Offset="0.5" Color="Blue" />
+            <GradientStop Offset="1" Color="Red" />
+        </LinearGradientBrush>
         <Style TargetType="Button" x:Key="baseButton"> <!--Базовый стил-->
             <Setter Property="Background" Value="HotPink"></Setter>
         </Style>
         <!-- перезапишим свойство BackGround--><!-- только в базовом оно останется розовым--> 
         <Style TargetType="Button" BasedOn="{StaticResource baseButton}"><!-- Расширили стил. Так же, как расширили бы класс-->
-            <Setter Property="Background" Value="Blue"></Setter>
+            <Setter Property="Background" Value="{StaticResource brush}"></Setter>
             <Setter Property="Margin" Value="5,5,5,5"></Setter>
         </Style>
     </Window.Resources>
